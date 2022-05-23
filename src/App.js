@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from './pages/Login/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
+import MyProfile from './pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -32,10 +33,8 @@ function App() {
             <Product />
           </RequireAuth>}>
         </Route>
-        <Route path='dashboard' element={
-          <RequireAuth>
-            <Dashboard />
-          </RequireAuth>}>
+        <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route path='profile' element={<MyProfile />}></Route>
         </Route>
       </Routes>
       <Footer />

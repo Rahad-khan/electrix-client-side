@@ -1,9 +1,25 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div>
-            dashboard
+        <div class="drawer drawer-mobile">
+            <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content p-2">
+                <Outlet />
+                {/* <!-- Page content here --> */}
+
+
+            </div>
+            <div class="drawer-side">
+                <label for="dashboard-drawer" class="drawer-overlay"></label>
+                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                    {/* <!-- Sidebar content here --> */}
+                    <li><Link to={`/dashboard/profile`}>My Profile</Link></li>
+                    <li><a>Sidebar Item 2</a></li>
+                </ul>
+
+            </div>
         </div>
     );
 };

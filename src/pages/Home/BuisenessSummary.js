@@ -7,7 +7,7 @@ import { MdOutlineRateReview } from "react-icons/md";
 const BuisenessSummary = () => {
     return (
         <section className="my-12">
-            <h1 className="text-4xl text-center font-semibold mb-10">
+            <h1 className="text-2xl text-center font-semibold mb-10 md:text-4xl">
                 <span className="border-b-[2px] border-orange-700">
                     Buiseness Summary
                 </span>
