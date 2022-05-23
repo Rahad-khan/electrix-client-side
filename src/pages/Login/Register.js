@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import auth from "../../firebase.init";
 import { FcGoogle } from 'react-icons/fc';
 import Spinner from "../Shared/Spinner";
+import useToken from "../../hooks/useToken";
 
 
 const Register = () => {
@@ -12,7 +13,9 @@ const Register = () => {
         useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, upProError] = useUpdateProfile(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-    //   const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
+
+
 
     let navigate = useNavigate();
     let location = useLocation();
@@ -32,11 +35,11 @@ const Register = () => {
         reset();
     };
 
-    //   useEffect(() => {
-    //     if (token) {
-    //       navigate(from, { replace: true });
-    //     }
-    //   }, [from, navigate, token]);
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [from, navigate, token]);
 
     let errorMessage;
 

@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Spinner from '../Shared/Spinner';
 import { FcGoogle } from 'react-icons/fc';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [signInWithEmailAndPassword, user, loading, error] =
@@ -15,7 +16,7 @@ const Login = () => {
 
     const [sendPasswordResetEmail, sending, PassError] =
         useSendPasswordResetEmail(auth);
-    // const [token] = useToken(user || gUser)
+    const [token] = useToken(user || gUser)
 
     let navigate = useNavigate();
     let location = useLocation();
@@ -47,11 +48,11 @@ const Login = () => {
         }
     };
 
-    // useEffect(() => {
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [from, navigate, token]);
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [from, navigate, token]);
 
 
     let errorMessage;

@@ -6,16 +6,35 @@ import auth from '../../firebase.init';
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
-  const navItems = (
+  const navItemsCenter = (
     <>
       <li>
         <Link to={`/blog`}>Blog</Link>
       </li>
-
       {
-        user ? <button onClick={() => signOut(auth)}>Sign Out</button> : <li>
-          <Link to={`/login`}>Login</Link>
-        </li>
+        user ?
+          <li>
+            <button onClick={() => {
+              localStorage.removeItem("accessToken");
+              signOut(auth)
+            }}>Sign Out</button>
+          </li>
+          : <li>
+            <Link to={`/login`}>Login</Link>
+          </li>
+
+      }
+    </>
+  );
+  const navItemsEnd = (
+    <>
+      {
+        user &&
+        <>
+          <li>
+            <Link to={`/dashboard`}>Dashboard</Link>
+          </li>
+        </>
 
       }
     </>
@@ -46,14 +65,20 @@ const Navbar = () => {
               tabIndex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {navItems}
+              {navItemsCenter}
+              {navItemsEnd}
             </ul>
           </div>
           <Link to={'/'} className="btn btn-ghost normal-case font-semibold text-2xl">ToolKits Zone</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
-            {navItems}
+            {navItemsCenter}
+          </ul>
+        </div>
+        <div className="navbar-end hidden lg:flex">
+          <ul className="menu menu-horizontal p-0">
+            {navItemsEnd}
           </ul>
         </div>
       </div>
