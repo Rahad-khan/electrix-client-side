@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import auth from '../../firebase.init';
 
-const PurchaseModal = ({ product }) => {
-    const { register, handleSubmit, watch, formState: { errors }, reset, getValues } = useForm();
+const PurchaseModal = ({ product, setModal }) => {
+    const [user] = useAuthState(auth);
+    const { register, handleSubmit, formState: { errors }, reset, getValues } = useForm();
     const [disable, setDisable] = useState(false)
     const [quantityError, setQuantityError] = useState('')
 
@@ -17,7 +20,10 @@ const PurchaseModal = ({ product }) => {
             setDisable(false)
         }
     }
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data)
+        setModal(null)
+    };
 
     return (
         <div>
@@ -35,7 +41,7 @@ const PurchaseModal = ({ product }) => {
                                 disabled
                                 {...register("name")}
                                 type="text"
-                                placeholder="Your Name"
+                                value={user?.displayName}
                                 className="input input-bordered w-full"
                             />
                         </div>
@@ -45,6 +51,7 @@ const PurchaseModal = ({ product }) => {
                             </label>
                             <input
                                 disabled
+                                value={user?.email}
                                 {...register("email")}
                                 type="email"
                                 placeholder="Your Email"
@@ -94,6 +101,8 @@ const PurchaseModal = ({ product }) => {
                                 {...register("purchaseQuantity")}
                                 type="number"
                                 onChange={(e) => handleButton(e)}
+                                min={minimum_order}
+                                max={quantity}
                                 defaultValue={minimum_order}
                                 className="input input-bordered w-full"
                             />

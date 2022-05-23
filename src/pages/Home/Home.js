@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from '../Shared/Spinner';
 import BuisenessSummary from './BuisenessSummary';
 import CustomerReview from './CustomerReview';
 import Hero from './Hero';
