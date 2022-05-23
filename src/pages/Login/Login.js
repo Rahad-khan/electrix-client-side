@@ -132,8 +132,8 @@ const Login = () => {
                         </small>
                     </div>
                     {errorMessage}
-                    <div class="form-control">
-                        <button class="btn btn-accent text-white">Login</button>
+                    <div className="form-control">
+                        <button className="btn btn-accent text-white">Login</button>
                     </div>
                 </form>
                 <p>

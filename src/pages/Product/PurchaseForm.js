@@ -37,7 +37,8 @@ const PurchaseForm = ({ product, setModal }) => {
             productName: name,
             picture,
             price,
-            total: data.purchaseQuantity * price
+            total: data.purchaseQuantity * price,
+            paid: "unpaid"
         }
         const response = await axios.post(`http://localhost:5000/purchase`, orderDetails);
         if (response?.data?.insertedId) {

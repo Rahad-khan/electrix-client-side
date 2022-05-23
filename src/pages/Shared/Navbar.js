@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
         <div className="lg:hideen flex justify-end w-full lg:w-0">
           <ul className="menu menu-horizontal p-0">
-            <label for="dashboard-drawer" class="btn btn-ghost drawer-button lg:hidden"><svg
+            <label htmlFor="dashboard-drawer" className="btn btn-ghost drawer-button lg:hidden"><svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               fill="none"

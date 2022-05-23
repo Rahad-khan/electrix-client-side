@@ -21,9 +21,9 @@ const Product = () => {
 
     return (
         <div className="px-3 lg:px-12 my-10 grid md:grid-cols-2 gap-4">
-            <div class="card bg-base-100 shadow-xl">
+            <div className="card bg-base-100 shadow-xl">
                 <figure><img className="h-40 md:h-52 mt-2" src={picture} alt={name} /></figure>
-                <div class="card-body">
+                <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p className='text-xl'>
                         Price: $<span className="text-orange-500">{price}</span>
