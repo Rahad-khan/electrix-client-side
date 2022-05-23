@@ -8,7 +8,7 @@ import auth from '../../firebase.init';
 const PurchaseForm = ({ product, setModal }) => {
     const [user] = useAuthState(auth);
     const { minimum_order, quantity, name, price, picture } = product;
-    const { register, handleSubmit, formState: { errors }, reset, watch } = useForm({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({
         defaultValues: {
             name: user?.displayName,
             email: user?.email
@@ -20,7 +20,7 @@ const PurchaseForm = ({ product, setModal }) => {
     const handleButton = (e) => {
         const purchaseValue = e.target.value;
         if (purchaseValue < minimum_order) {
-            setQuantityError(`Purchase qauntity is minimum ${minimum_order}`);
+            setQuantityError(`You have to purchase at least ${minimum_order} products`);
             setDisable(true);
         } else if (purchaseValue > quantity) {
             setQuantityError(`Purchase qauntity is maximum ${quantity}`);
