@@ -21,6 +21,8 @@ import ManageOrder from './pages/Dashboard/ManageOrder';
 import AddProduct from './AddProduct';
 import ManageProduct from './pages/Dashboard/ManageProduct';
 import MakeAdmin from './pages/Dashboard/MakeAdmin';
+import MyPortfolio from './pages/Portfolio/MyPortfolio';
+import Error from './pages/Error/Error';
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='blog' element={<Blog />}></Route>
+        <Route path='portfolio' element={<MyPortfolio />}></Route>
         <Route path='login' element={<Login />}></Route>
         <Route path='register' element={<Register />}></Route>
         <Route path='product/:id' element={
@@ -51,6 +54,7 @@ function App() {
           <Route path='manageProduct' element={<RequireAdmin><ManageProduct /></RequireAdmin>}></Route>
           <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin /></RequireAdmin>}></Route>
         </Route>
+        <Route path='*' element={<Error />}></Route>
       </Routes>
       <Footer />
       <ToastContainer />

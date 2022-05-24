@@ -11,17 +11,23 @@ const Navbar = () => {
       <li>
         <Link to={`/blog`}>Blog</Link>
       </li>
+      <li>
+        <Link to={`/portfolio`}>My Portfolio</Link>
+      </li>
       {
         user ?
           <>
+            <li>
+              <Link to={`/dashboard`}>Dashboard</Link>
+            </li>
+            <li>
+              <button>{user?.displayName}</button>
+            </li>
             <li>
               <button onClick={() => {
                 localStorage.removeItem("accessToken");
                 signOut(auth)
               }}>Sign Out</button>
-            </li>
-            <li>
-              <button>{user?.displayName}</button>
             </li>
           </>
           : <li>
@@ -36,9 +42,7 @@ const Navbar = () => {
       {
         user &&
         <>
-          <li>
-            <Link to={`/dashboard`}>Dashboard</Link>
-          </li>
+
         </>
 
       }
@@ -76,16 +80,13 @@ const Navbar = () => {
           </div>
           <Link to={'/'} className="btn btn-ghost normal-case font-semibold text-2xl">ToolKits Zone</Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
-            {navItemsCenter}
-          </ul>
-        </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
+            {navItemsCenter}
             {navItemsEnd}
           </ul>
         </div>
+
         <div className="lg:hideen flex justify-end w-full lg:w-0">
           <ul className="menu menu-horizontal p-0">
             <label htmlFor="dashboard-drawer" className="btn btn-ghost drawer-button lg:hidden"><svg
