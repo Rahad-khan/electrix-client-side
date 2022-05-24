@@ -12,7 +12,7 @@ const BuisenessSummary = () => {
                     Buiseness Summary
                 </span>
             </h1>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 justify-self-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4">
                 <div className="flex flex-col justify-center items-center">
                     <BsPeople className="text-6xl text-accent mb-3"></BsPeople>
                     <p className="text-4xl font-bold">
