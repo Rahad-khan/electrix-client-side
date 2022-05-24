@@ -20,7 +20,7 @@ const ToolsCard = ({ product }) => {
         <p>
           <small>Available in Stock: {quantity}</small>
         </p>
-        <p>{description.slice(0, 100)}...</p>
+        <p>{description.slice(0, 150)}...</p>
         <div className="card-actions justify-end">
           <Link to={`/product/${_id}`}>
             <button className="btn btn-primary">Buy Now</button>

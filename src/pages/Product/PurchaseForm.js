@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
-const PurchaseForm = ({ product, setModal }) => {
+const PurchaseForm = ({ product }) => {
     const [user] = useAuthState(auth);
     const { minimum_order, quantity, name, price, picture } = product;
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
