@@ -28,7 +28,7 @@ const Dashboard = () => {
             (isAdmin?.role === 'admin') ?
                 <>
                     <li><Link to={`/dashboard/manageOrder`}>Manage All Orders</Link></li>
-                    <li><Link to={`/dashboard/addProduct`}>Add A Product</Link></li>
+                    <li><Link to={`/dashboard/addProduct`}>Add A Tool</Link></li>
                     <li><Link to={`/dashboard/manageProduct`}>Manage Products</Link></li>
                     <li><Link to={`/dashboard/makeAdmin`}>Make Admin</Link></li>
                 </>
