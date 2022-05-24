@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src={hero}
-          className="max-w-lg rounded-lg shadow-2xl flex-1"
+          className="lg:max-w-lg rounded-lg shadow-2xl flex-1"
           alt='mechanic'
         />
         <div className="flex-1">

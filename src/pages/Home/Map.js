@@ -7,7 +7,7 @@ const Map = () => {
     return (
         <div className="my-10 px-4 lg:px-0" id="location">
             <div className='h-1/2'>
-                <h1 className="text-4xl text-center font-semibold mb-6">
+                <h1 className="text-2xl text-center font-semibold mb-10 md:text-4xl">
                     <span className="border-b-[2px] border-orange-700">Our Location</span>
                 </h1>
                 <MapContainer center={position} zoom={13} scrollWheelZoom={false} className='w-full h-[600px]'>

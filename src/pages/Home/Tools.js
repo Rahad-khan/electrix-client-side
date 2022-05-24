@@ -16,7 +16,7 @@ const Tools = () => {
 
   return (
     <div>
-      <h1 className="text-4xl text-center font-semibold mb-10">
+      <h1 className="text-2xl text-center font-semibold mb-10 md:text-4xl">
         <span className="border-b-[2px] border-orange-700">Our Tools</span>
       </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
