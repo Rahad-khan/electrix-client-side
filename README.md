@@ -1,6 +1,6 @@
-# Getting Started ElectriX
+# Getting Started With Electrix
 
-## ElectriX [Website Live Link](https://toolkits-4c4a1.web.app/).
+## Electrix [Website Live Link](https://toolkits-4c4a1.web.app/).
 ---
 ## Features And Functionality
 * Electrix has authentication system.
