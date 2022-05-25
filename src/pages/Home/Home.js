@@ -17,10 +17,10 @@ const Home = () => {
         <BuisenessSummary />
         <CustomerReview />
       </section>
-      <Map />
       <section className="px-3 lg:px-12 my-10">
         <Faq />
       </section>
+      <Map />
     </main>
   );
 };

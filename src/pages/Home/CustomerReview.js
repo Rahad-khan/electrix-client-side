@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
 import { AiTwotoneStar } from "react-icons/ai"
+import Spinner from '../Shared/Spinner';
 
 const CustomerReview = () => {
     const [reviews, setReviews] = useState([])
@@ -18,6 +19,9 @@ const CustomerReview = () => {
                     Customer Reviews
                 </span>
             </h1>
+            {
+                reviews.length === 0 && <Spinner></Spinner>
+            }
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     latestReview.map(review => <div key={review._id} className="card max-w-lg bg-base-100 shadow-xl">
