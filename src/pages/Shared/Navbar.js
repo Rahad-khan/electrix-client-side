@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { BsPersonCircle } from 'react-icons/bs'
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -21,7 +22,8 @@ const Navbar = () => {
               <Link to={`/dashboard`}>Dashboard</Link>
             </li>
             <li>
-              <button>{user?.displayName}</button>
+              <button>
+                {user?.displayName}</button>
             </li>
             <li>
               <button onClick={() => {
@@ -33,17 +35,6 @@ const Navbar = () => {
           : <li>
             <Link to={`/login`}>Login</Link>
           </li>
-
-      }
-    </>
-  );
-  const navItemsEnd = (
-    <>
-      {
-        user &&
-        <>
-
-        </>
 
       }
     </>
@@ -75,7 +66,6 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {navItemsCenter}
-              {navItemsEnd}
             </ul>
           </div>
           <Link to={'/'} className="btn btn-ghost normal-case font-bold text-3xl">Elctrix</Link>
@@ -83,7 +73,6 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 text-lg">
             {navItemsCenter}
-            {navItemsEnd}
           </ul>
         </div>
 

@@ -32,13 +32,15 @@ const PurchaseForm = ({ product }) => {
         }
     }
     const onSubmit = async (data) => {
+        const { purchaseQuantity, ...rest } = data
         const orderDetails = {
-            ...data,
+            ...rest,
+            purchaseQuantity: +purchaseQuantity,
             productName: name,
             picture,
             price,
             total: data.purchaseQuantity * price,
-            paid: "unpaid"
+            status: "unpaid"
         }
         const response = await axios.post(`http://localhost:5000/purchase`, orderDetails);
         if (response?.data?.insertedId) {

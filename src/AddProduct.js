@@ -24,7 +24,7 @@ const AddProduct = () => {
         }
     };
     return (
-        <div className='flex flex-col items-center justify-center h-screen'>
+        <div className='flex flex-col items-center justify-center'>
             <h1 className="text-2xl text-center font-semibold mb-6">
                 <span className="border-b-[2px] border-orange-700">Add a Tool</span>
             </h1>

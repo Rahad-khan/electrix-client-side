@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const OrderRaw = ({ index, refetch, product, setDeleteProduct }) => {
-    const { productName, price, address, total, purchaseQuantity, paid, _id, transactionId
+const OrderRaw = ({ index, product, setDeleteProduct }) => {
+    const { productName, price, address, total, purchaseQuantity, status, _id, transactionId
     } = product;
 
 
@@ -16,20 +16,25 @@ const OrderRaw = ({ index, refetch, product, setDeleteProduct }) => {
                 <td>{total}</td>
                 <td>{address}</td>
                 {
-                    paid === 'paid' ?
-                        <>
-                            <td>
-                                <button className='btn btn-sm btn-success'>Paid</button>
-                                <p>Transaction Id : <span className='text-success'>{transactionId}</span></p>
-                            </td>
-                        </> : <>
-                            <td>
-                                <Link to={`/dashboard/payment/${_id}`}>
-                                    <button className='btn btn-sm btn-warning'>Pay</button>
-                                </Link>
-                                <label onClick={() => setDeleteProduct(product)} htmlFor="cofirmation-modal" className="btn btn-sm btn-error ml-2">Cancel Order</label>
-                            </td>
-                        </>
+                    status === 'paid' &&
+                    <td>
+                        <button className='btn btn-sm btn-success'>Paid</button>
+                        <p>Transaction Id : <span className='text-success'>{transactionId}</span></p>
+                    </td>}
+                {
+                    status === 'shipped' &&
+                    <td>
+                        <button className='btn btn-sm btn-success'>Shipping</button>
+                        <p>Transaction Id : <span className='text-success'>{transactionId}</span></p>
+                    </td>}
+
+                {
+                    status === "unpaid" && <td>
+                        <Link to={`/dashboard/payment/${_id}`}>
+                            <button className='btn btn-sm btn-warning'>Pay</button>
+                        </Link>
+                        <label onClick={() => setDeleteProduct(product)} htmlFor="cofirmation-modal" className="btn btn-sm btn-error ml-2">Cancel Order</label>
+                    </td>
                 }
             </tr>
         </>
