@@ -47,8 +47,8 @@ const AddReview = () => {
         }
     }
     return (
-        <div className='flex justify-center my-10'>
-            <div class="card max-w-lg bg-base-100 shadow-xl">
+        <div className='lg:m-10'>
+            <div class="card bg-base-100 lg:w-4/5 mx-auto shadow-xl">
                 <div class="card-body">
                     <h1 className='text-center text-2xl text-accent font-semibold'>Add A Review</h1>
                     <form onSubmit={handleReview}>
@@ -75,7 +75,7 @@ const AddReview = () => {
                             </label>}
                         </div>
                         <textarea required className='mt-4 textarea textarea-bordered w-full' rows={`5`} name='description' placeholder='Write Your Review'></textarea>
-                        <button disabled={disable} type="submit" className="btn w-full mt-2">Purchase Now</button>
+                        <button disabled={disable} type="submit" className="btn w-full mt-2">Submit Review</button>
                     </form>
                 </div>
             </div>

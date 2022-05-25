@@ -27,7 +27,7 @@ const OrderRaw = ({ index, refetch, product, setDeleteProduct }) => {
                                 <Link to={`/dashboard/payment/${_id}`}>
                                     <button className='btn btn-sm btn-warning'>Pay</button>
                                 </Link>
-                                <label onClick={() => setDeleteProduct(product)} htmlFor="cofirmation-modal" className="btn btn-sm btn-error ml-2">Delete</label>
+                                <label onClick={() => setDeleteProduct(product)} htmlFor="cofirmation-modal" className="btn btn-sm btn-error ml-2">Cancel Order</label>
                             </td>
                         </>
                 }
