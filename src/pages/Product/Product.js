@@ -10,7 +10,7 @@ const Product = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/products/${id}`)
+        axios.get(`https://toolkits-server.herokuapp.com/products/${id}`)
             .then(res => {
                 setProduct(res.data);
             })

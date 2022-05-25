@@ -7,7 +7,7 @@ import ProductDeleteModal from './ProductDeleteModal';
 
 const ManageProduct = () => {
     const { data, isLoading, refetch } = useQuery("allProducts", async () => {
-        return await axios.get(`http://localhost:5000/products`);
+        return await axios.get(`https://toolkits-server.herokuapp.com/products`);
     })
 
     const [deleteAdminProduct, setDeleteAdminProduct] = useState(null)
@@ -20,8 +20,8 @@ const ManageProduct = () => {
     const products = data?.data;
     return (
         <section className='my-5'>
-            <div class="overflow-x-auto px-12">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto px-12">
+                <table className="table table-compact w-full">
                     <thead>
                         <tr>
                             <th></th>

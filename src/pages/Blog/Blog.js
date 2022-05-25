@@ -4,8 +4,8 @@ const Blog = () => {
     return (
         <div className="px-3 lg:px-12 my-10">
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
-                <div class="card bg-base-100 max-w-fit shadow-xl">
-                    <div class="card-body">
+                <div className="card bg-base-100 max-w-fit shadow-xl">
+                    <div className="card-body">
                         <article>
                             <h1 className='font-semibold text-xl mb-4'>How will you improve the performance of a React Application?</h1>
                             <ul className='list-inside list-disc'>
@@ -17,8 +17,8 @@ const Blog = () => {
                         </article>
                     </div>
                 </div>
-                <div class="card bg-base-100 max-w-fit  shadow-xl">
-                    <div class="card-body">
+                <div className="card bg-base-100 max-w-fit  shadow-xl">
+                    <div className="card-body">
                         <article>
                             <h1 className='font-semibold text-xl mb-4'>What are the different ways to manage a state in a React application?</h1>
                             <p><strong>There are four type of states available in react</strong></p>
@@ -37,8 +37,8 @@ const Blog = () => {
                         </article>
                     </div>
                 </div>
-                <div class="card bg-base-100 max-w-fit  shadow-xl">
-                    <div class="card-body">
+                <div className="card bg-base-100 max-w-fit  shadow-xl">
+                    <div className="card-body">
                         <article>
                             <h1 className='font-semibold text-xl mb-4'>How does prototypical inheritance work?</h1>
 
@@ -47,16 +47,16 @@ const Blog = () => {
                         </article>
                     </div>
                 </div>
-                <div class="card bg-base-100 max-w-fit  shadow-xl">
-                    <div class="card-body">
+                <div className="card bg-base-100 max-w-fit  shadow-xl">
+                    <div className="card-body">
                         <article>
                             <h1 className='font-semibold text-xl mb-4'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h1>
                             <p>Firstly i create a input field which take search value what i looking for and then i do filter mathod on array with includes method of the name property which value are matched those are return back to an array and i will show the result in UI</p>
                         </article>
                     </div>
                 </div>
-                <div class="card bg-base-100 max-w-fit  shadow-xl">
-                    <div class="card-body">
+                <div className="card bg-base-100 max-w-fit  shadow-xl">
+                    <div className="card-body">
                         <article>
                             <h1 className='font-semibold text-xl mb-4'>What is a unit test? Why should write unit tests?</h1>
                             <p>UNIT testing is a type of testing where individual components of a apps are tested. The purpose is to validate that each unit of the apps code performs as expected. Unit Testing is done during the development </p>

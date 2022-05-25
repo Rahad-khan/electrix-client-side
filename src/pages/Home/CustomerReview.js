@@ -8,7 +8,7 @@ const CustomerReview = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/reviews").then(response => setReviews(response.data))
+        axios.get("https://toolkits-server.herokuapp.com/reviews").then(response => setReviews(response.data))
     }, [])
 
     const latestReview = reviews.slice(0, 6)

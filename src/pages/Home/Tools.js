@@ -7,7 +7,7 @@ const Tools = () => {
   const [products, setProducts] = useState([])
   useEffect(() => {
     const getProduct = async () => {
-      const { data } = await axios.get("http://localhost:5000/products");
+      const { data } = await axios.get("https://toolkits-server.herokuapp.com/products");
       setProducts(data)
     }
     getProduct()

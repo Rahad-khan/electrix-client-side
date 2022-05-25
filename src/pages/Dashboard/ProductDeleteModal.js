@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const ProductDeleteModal = ({ product, setDeleteAdminProduct, refetch }) => {
     const { name, _id } = product;
     const handleDelete = async () => {
-        const { data } = await axios.delete(`http://localhost:5000/products/${_id}`, {
+        const { data } = await axios.delete(`https://toolkits-server.herokuapp.com/products/${_id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }

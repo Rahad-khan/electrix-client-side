@@ -12,7 +12,7 @@ const RequireAdmin = ({ children }) => {
     let location = useLocation();
     const email = user?.email;
     const { data, isLoading } = useQuery(["adminQuery", user], async () => {
-        return await axios.get(`http://localhost:5000/user/${email}`, {
+        return await axios.get(`https://toolkits-server.herokuapp.com/user/${email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }

@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const UserRaw = ({ index, user, refetch }) => {
     const handleMakeAdmin = async () => {
         const email = user.email;
-        const { data } = await axios.put(`http://localhost:5000/user/admin/${email}`, null, {
+        const { data } = await axios.put(`https://toolkits-server.herokuapp.com/user/admin/${email}`, null, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }

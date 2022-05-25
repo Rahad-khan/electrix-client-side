@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [deleteProduct, setDeleteProduct] = useState(null);
     const email = user?.email;
-    const url = `http://localhost:5000/purchase/${email}`;
+    const url = `https://toolkits-server.herokuapp.com/purchase/${email}`;
 
     const { data, isLoading, refetch } = useQuery("purchase", async () => {
         return await axios.get(url, {

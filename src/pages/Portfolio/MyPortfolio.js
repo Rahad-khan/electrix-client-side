@@ -3,10 +3,10 @@ import React from 'react';
 const MyPortfolio = () => {
     return (
         <div className="px-3 lg:px-12 my-10 flex justify-center items-center">
-            <div class="card bg-base-100 max-w-fit  shadow-xl">
-                <div class="card-body">
+            <div className="card bg-base-100 max-w-fit  shadow-xl">
+                <div className="card-body">
                     <div className='flex items-center justify-center flex-col'>
-                        <h2 class="text-2xl font-semibold italic m-0">K.M. Rahad</h2>
+                        <h2 className="text-2xl font-semibold italic m-0">K.M. Rahad</h2>
                         <p className='italic m-0'>Email: <a href="mailto:kmrahad12@gmail.com"><span className='link link-primary'>kmrahad12@gmail.com</span></a></p>
                     </div>
                     <article>

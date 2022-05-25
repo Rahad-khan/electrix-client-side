@@ -42,7 +42,7 @@ const PurchaseForm = ({ product }) => {
             total: data.purchaseQuantity * price,
             status: "unpaid"
         }
-        const response = await axios.post(`http://localhost:5000/purchase`, orderDetails);
+        const response = await axios.post(`https://toolkits-server.herokuapp.com/purchase`, orderDetails);
         if (response?.data?.insertedId) {
             toast.success("Purchased Successfully");
             reset();

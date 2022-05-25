@@ -34,7 +34,7 @@ const AddReview = () => {
             description
         }
         const { data } = await axios.post(
-            `http://localhost:5000/reviews`, doc,
+            `https://toolkits-server.herokuapp.com/reviews`, doc,
             {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -48,8 +48,8 @@ const AddReview = () => {
     }
     return (
         <div className='lg:m-10'>
-            <div class="card bg-base-100 lg:w-4/5 mx-auto shadow-xl">
-                <div class="card-body">
+            <div className="card bg-base-100 lg:w-4/5 mx-auto shadow-xl">
+                <div className="card-body">
                     <h1 className='text-center text-2xl text-accent font-semibold'>Add A Review</h1>
                     <form onSubmit={handleReview}>
                         <div className="form-control w-full">

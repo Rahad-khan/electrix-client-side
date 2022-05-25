@@ -6,7 +6,7 @@ const PurchaseAdminRow = ({ index, purchase, refetch, setDeleteProduct }) => {
     const { _id, name, email, productName, price, purchaseQuantity, total, status } = purchase;
 
     const handleShipping = async () => {
-        const { data } = await axios.patch(`http://localhost:5000/shipment/${_id}`, null, {
+        const { data } = await axios.patch(`https://toolkits-server.herokuapp.com/shipment/${_id}`, null, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             }

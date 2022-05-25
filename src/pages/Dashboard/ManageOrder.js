@@ -8,7 +8,7 @@ import PurchaseAdminRow from './PurchaseAdminRow';
 const ManageOrder = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
     const { data, isLoading, refetch } = useQuery("purchaseAll", async () => {
-        return await axios.get("http://localhost:5000/purchase", {
+        return await axios.get("https://toolkits-server.herokuapp.com/purchase", {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }
@@ -21,8 +21,8 @@ const ManageOrder = () => {
 
     return (
         <section>
-            <div class="overflow-x-auto px-12">
-                <table class="table table-compact w-full">
+            <div className="overflow-x-auto px-12">
+                <table className="table table-compact w-full">
                     <thead>
                         <tr>
                             <th></th>

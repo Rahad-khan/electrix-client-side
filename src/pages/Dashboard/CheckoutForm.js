@@ -13,7 +13,7 @@ const CheckoutForm = ({ purchaseInfo }) => {
     const { total, name, email, _id } = purchaseInfo;
     useEffect(() => {
         axios.post(
-            `http://localhost:5000/create-payment-intent`,
+            `https://toolkits-server.herokuapp.com/create-payment-intent`,
             { total },
             {
                 headers: {
@@ -68,7 +68,7 @@ const CheckoutForm = ({ purchaseInfo }) => {
                 transactionId: paymentIntent.id,
                 buyer: _id,
             }
-            axios.patch(`http://localhost:5000/payment/${_id}`, paidInfromation, {
+            axios.patch(`https://toolkits-server.herokuapp.com/payment/${_id}`, paidInfromation, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem("accessToken")}`,
                 }

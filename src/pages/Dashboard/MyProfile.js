@@ -10,7 +10,7 @@ const MyProfile = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
     const { data, isLoading, refetch } = useQuery(["adminQuery", user], async () => {
-        return await axios.get(`http://localhost:5000/user/${email}`, {
+        return await axios.get(`https://toolkits-server.herokuapp.com/user/${email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }
@@ -25,7 +25,7 @@ const MyProfile = () => {
     const handleLocation = async (e) => {
         e.preventDefault();
         const location = e.target.location.value;
-        const { data } = await axios.put(`http://localhost:5000/updateProfile/${user?.email}`, { location }, {
+        const { data } = await axios.put(`https://toolkits-server.herokuapp.com/updateProfile/${user?.email}`, { location }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
@@ -39,7 +39,7 @@ const MyProfile = () => {
     const handleLinkedin = async (e) => {
         e.preventDefault();
         const lnikedin = e.target.lnikedin.value;
-        const { data } = await axios.put(`http://localhost:5000/updateProfile/${user?.email}`, { lnikedin }, {
+        const { data } = await axios.put(`https://toolkits-server.herokuapp.com/updateProfile/${user?.email}`, { lnikedin }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
@@ -53,7 +53,7 @@ const MyProfile = () => {
     const handlePhone = async (e) => {
         e.preventDefault();
         const phone = e.target.phone.value;
-        const { data } = await axios.put(`http://localhost:5000/updateProfile/${user?.email}`, { phone }, {
+        const { data } = await axios.put(`https://toolkits-server.herokuapp.com/updateProfile/${user?.email}`, { phone }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
@@ -67,7 +67,7 @@ const MyProfile = () => {
     const handleEducation = async (e) => {
         e.preventDefault();
         const education = e.target.education.value;
-        const { data } = await axios.put(`http://localhost:5000/updateProfile/${user?.email}`, { education }, {
+        const { data } = await axios.put(`https://toolkits-server.herokuapp.com/updateProfile/${user?.email}`, { education }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`,
             },
@@ -87,9 +87,9 @@ const MyProfile = () => {
             {customer.location && <p>Location: {customer?.location}</p>}
             {customer.phone && <p>Phone: {customer?.phone}</p>}
             {customer.lnikedin && <p>Lnikedin: {customer?.lnikedin}</p>}
-            <div class="divider"></div>
-            <div class="card max-w-lg bg-base-100 shadow-xl">
-                <div class="card-body">
+            <div className="divider"></div>
+            <div className="card max-w-lg bg-base-100 shadow-xl">
+                <div className="card-body">
                     <h1 className='text-center text-2xl text-accent font-semibold'>Update Your Profile</h1>
                     <form onSubmit={handleEducation} className="w-full flex md:flex-row flex-col items-center md:space-x-1">
                         <div className="form-control w-full">

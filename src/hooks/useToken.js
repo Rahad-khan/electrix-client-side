@@ -7,7 +7,7 @@ const useToken = (user) => {
     useEffect(() => {
         const email = user?.user?.email;
         if (email) {
-            axios.put(`http://localhost:5000/user/${email}`, { email })
+            axios.put(`https://toolkits-server.herokuapp.com/user/${email}`, { email })
                 .then(response => {
                     const { data } = response;
                     setToken(data.token);

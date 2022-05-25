@@ -13,7 +13,7 @@ const AddProduct = () => {
             quantity: +quantity,
             ...rest
         }
-        const response = await axios.post('http://localhost:5000/products', doc, {
+        const response = await axios.post('https://toolkits-server.herokuapp.com/products', doc, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }

@@ -6,7 +6,7 @@ import UserRaw from './UserRaw';
 
 const MakeAdmin = () => {
     const { data, isLoading, refetch } = useQuery("allUsers", async () => {
-        return await axios.get("http://localhost:5000/user", {
+        return await axios.get("https://toolkits-server.herokuapp.com/user", {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }

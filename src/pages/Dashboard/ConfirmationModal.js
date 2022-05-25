@@ -7,7 +7,7 @@ const ConfirmationModal = ({ deleteProduct, refetch, setDeleteProduct }) => {
 
 
     const handleDelete = async () => {
-        const { data } = await axios.delete(`http://localhost:5000/purchase/${_id}`, {
+        const { data } = await axios.delete(`https://toolkits-server.herokuapp.com/purchase/${_id}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem("accessToken")}`
             }
