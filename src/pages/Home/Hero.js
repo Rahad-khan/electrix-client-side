@@ -12,7 +12,7 @@ const Hero = () => {
         />
         <div className="flex-1">
           <h1 className="text-2xl md:text-5xl font-bold text-accent">
-            Welcome To Toolkit
+            Welcome To Electrix
           </h1>
           <p className="md:text-xl py-4">
             We build electric tools for essential use in regular day. Those
